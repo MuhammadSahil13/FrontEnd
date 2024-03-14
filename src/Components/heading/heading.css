@@ -1,0 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.heading{
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-style: bold;
+}

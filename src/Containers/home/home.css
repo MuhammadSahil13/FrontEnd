@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.home{
+    margin-top: 2rem;
+    border-radius: 10px ;
+    background: linear-gradient(132deg, rgb(251, 251, 255) 0.00%, rgb(215, 223, 252) 100.00%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home__image img{
+    width: 450px;
+    height:300px ;
+    border-radius: 5px;
+}
+.home__image{
+    margin-top: 2rem;
+}
+
+.home__info{
+    text-align:center;
+}
+.home__heading {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.home__button{
+    margin-bottom: 2rem;
+}
+.home__Info{
+    margin-top: 2rem;
+    width: 50%;
+    text-align: center;
+}
