@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.UserPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.UserPage__title{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.UserPage__title p{
+    font-size: 1.5rem;
+}
+.UserPage__form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.UserPage__form-name{
+    margin-top: 2rem;
+}
+.UserPage__form-date{
+    margin-top: 2rem;
+}
+.UserPage__form-name textarea{
+    outline: none;
+    resize: none;
+    border-radius: 20px;
+}

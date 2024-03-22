@@ -1,49 +1,48 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import TextField from '@mui/material/TextField';
+import 'dayjs/locale/en-gb'; // Import the en-GB locale
 
 const Login = (props) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [emailError, setEmailError] = useState('')
-  const [passwordError, setPasswordError] = useState('')
+ const [startDate, setStartDate] = useState(new Date());
+ const navigate = useNavigate();
+ const [date, setDate] = useState(null);
 
-  const navigate = useNavigate()
+ function onChange(date) {
+    setDate(date);
+ }
 
-  const onButtonClick = () => {
+ const onButtonClick = () => {
     // You'll update this function later...
-  }
+ }
 
-  return (
-    <div className={'mainContainer' }>
-      <div className={'titleContainer'}>
-        <div>Login</div>
+ return (
+    <div className="UserPage">
+      <div className="UserPage__title">
+        <p>Your Birthday Calendar: Keeping Your Special Moments in Check</p>
       </div>
-      <br />
-      <div className={'inputContainer'}>
-        <input
-          value={email}
-          placeholder="Enter your email here"
-          onChange={(ev) => setEmail(ev.target.value)}
-          className={'inputBox'}
-        />
-        <label className="errorLabel">{emailError}</label>
-      </div>
-      <br />
-      <div className={'inputContainer'}>
-        <input
-          value={password}
-          placeholder="Enter your password here"
-          onChange={(ev) => setPassword(ev.target.value)}
-          className={'inputBox'}
-        />
-        <label className="errorLabel">{passwordError}</label>
-      </div>
-      <br />
-      <div className={'inputContainer'}>
-        <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log in'} />
+      <div className="UserPage__form">
+        <div className="UserPage__form-name">
+          <textarea></textarea>
+        </div>
+        <div className="UserPage__form-date">
+          <LocalizationProvider dateAdapter={AdapterDayjs} locale="en-GB">
+            <DatePicker
+              label="Select Date"
+              value={date}
+              onChange={onChange}
+              renderInput={(props) => <TextField {...props} />}
+              format="DD/MM/YYYY" // Use format prop for MUI version 6.x+
+            />
+          </LocalizationProvider>
+        </div>
       </div>
     </div>
-  )
+ );
 }
 
-export default Login
+export default Login;
